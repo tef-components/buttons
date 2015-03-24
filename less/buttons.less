@@ -2,7 +2,7 @@
 // TEF components - buttons
 //
 
-@import "mixins.less";
+@import "../../utils/less/utils.less";
 
 // Reset
 button::-moz-focus-inner {
@@ -127,5 +127,12 @@ button::-moz-focus-inner {
   }
 
   .colors-loop();
+
+  // disabled
+  &[disabled],
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
 }
 
