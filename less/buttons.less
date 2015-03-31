@@ -18,7 +18,7 @@ button::-moz-focus-inner {
   background-color: @color;
   color: @text;
   font-size: 15px;
-  line-height: normal;
+  line-height: 18px;
   font-weight: normal;
   text-align: center;
   border: 1px solid @border;
@@ -29,6 +29,7 @@ button::-moz-focus-inner {
   text-decoration: none;
   touch-action: manipulation;
   box-sizing: border-box;
+  text-transform: none;
   .truncate();
 
   // states
@@ -48,7 +49,18 @@ button::-moz-focus-inner {
   }
 
   // icons
-  &, ::content {
+  [data-icon]:before {
+    position: relative;
+    font-size: 23px;
+    line-height: 0;
+    top: 4px;
+  }
+
+  [data-icon] + span,
+  span + [data-icon] { margin-left: 5px; }
+  span { font-size: 15px; }
+
+  ::content {
     [data-icon]:before {
       position: relative;
       font-size: 23px;
@@ -64,9 +76,16 @@ button::-moz-focus-inner {
   // sizes
   &.small {
     font-size: 11px;
+    line-height: 13px;
     padding: 6px 9px;
 
-    &, ::content {
+    [data-icon]:before {
+      font-size: 18px;
+      top: 3px;
+    }
+    span { font-size: 11px; }
+
+    ::content {
       [data-icon]:before {
         font-size: 18px;
         top: 3px;
@@ -77,9 +96,16 @@ button::-moz-focus-inner {
 
   &.large {
     font-size: 24px;
+    line-height: 29px;
     padding: 7px 14px;
 
-    &, ::content {
+    [data-icon]:before {
+      font-size: 32px;
+      top: 5px;
+    }
+    span { font-size: 24px; }
+
+    ::content {
       [data-icon]:before {
         font-size: 32px;
         top: 5px;
@@ -89,7 +115,7 @@ button::-moz-focus-inner {
   }
 
   // colors loop
-  @colors: "positive", "negative", "subdued", "significant", "neutral";
+  @colors: "positive", "negative", "subdued", "significant";
 
   .colors-loop {
     .-(@i: length(@colors)) when (@i > 0) {
