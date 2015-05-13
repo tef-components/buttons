@@ -47,15 +47,15 @@ button::-moz-focus-inner {
   }
 
   // icons
-  [icon]:before {
+  [data-icon]:before {
     position: relative;
     font-size: 23px;
     line-height: 0;
     top: 4px;
   }
 
-  [icon] + span,
-  span + [icon] { margin-left: 5px; }
+  [data-icon] + span,
+  span + [data-icon] { margin-left: 5px; }
   span { font-size: 15px; }
 
   // sizes
@@ -64,7 +64,7 @@ button::-moz-focus-inner {
     line-height: 13px;
     padding: 6px 9px;
 
-    [icon]:before {
+    [data-icon]:before {
       font-size: 18px;
       top: 3px;
     }
@@ -76,7 +76,7 @@ button::-moz-focus-inner {
     line-height: 29px;
     padding: 7px 14px;
 
-    [icon]:before {
+    [data-icon]:before {
       font-size: 32px;
       top: 5px;
     }
