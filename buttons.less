@@ -47,6 +47,7 @@ button::-moz-focus-inner {
   }
 
   // icons
+  [icon]:before,
   [data-icon]:before {
     position: relative;
     font-size: 23px;
@@ -54,7 +55,9 @@ button::-moz-focus-inner {
     top: 4px;
   }
 
+  [icon] + span,
   [data-icon] + span,
+  span + [icon],
   span + [data-icon] { margin-left: 5px; }
   span { font-size: 15px; }
 
@@ -64,6 +67,7 @@ button::-moz-focus-inner {
     line-height: 13px;
     padding: 6px 9px;
 
+    [icon]:before,
     [data-icon]:before {
       font-size: 18px;
       top: 3px;
@@ -76,6 +80,7 @@ button::-moz-focus-inner {
     line-height: 29px;
     padding: 7px 14px;
 
+    [icon]:before,
     [data-icon]:before {
       font-size: 32px;
       top: 5px;
@@ -103,7 +108,7 @@ button::-moz-focus-inner {
       border-color: @positiveBorderActive;
     }
   }
-  
+
   &.negative {
     background-color: @negative;
     color: @negativeText;
@@ -123,7 +128,7 @@ button::-moz-focus-inner {
       border-color: @negativeBorderActive;
     }
   }
-  
+
   &.subdued {
     background-color: @subdued;
     color: @subduedText;
@@ -143,7 +148,7 @@ button::-moz-focus-inner {
       border-color: @subduedBorderActive;
     }
   }
-  
+
   &.significant {
     background-color: @significant;
     color: @significantText;
@@ -163,7 +168,7 @@ button::-moz-focus-inner {
       border-color: @significantBorderActive;
     }
   }
-      
+
   // options
   &.block {
     display: block;
