@@ -12,6 +12,7 @@ button::-moz-focus-inner {
   display: inline-block;
   vertical-align: middle;
   min-width: 35px;
+  width: auto;
   background-image: none;
   background-color: @color;
   color: @text;
@@ -39,7 +40,6 @@ button::-moz-focus-inner {
     outline: none;
   }
 
-  &:active,
   &.active {
     color: @textActive;
     background-color: @colorActive;
@@ -101,7 +101,6 @@ button::-moz-focus-inner {
       border-color: @positiveBorderHover;
     }
 
-    &:active,
     &.active {
       background-color: @positiveActive;
       color: @positiveTextActive;
@@ -121,7 +120,6 @@ button::-moz-focus-inner {
       border-color: @negativeBorderHover;
     }
 
-    &:active,
     &.active {
       background-color: @negativeActive;
       color: @negativeTextActive;
@@ -141,7 +139,6 @@ button::-moz-focus-inner {
       border-color: @subduedBorderHover;
     }
 
-    &:active,
     &.active {
       background-color: @subduedActive;
       color: @subduedTextActive;
@@ -161,7 +158,6 @@ button::-moz-focus-inner {
       border-color: @significantBorderHover;
     }
 
-    &:active,
     &.active {
       background-color: @significantActive;
       color: @significantTextActive;
@@ -175,7 +171,64 @@ button::-moz-focus-inner {
     width: 100%;
   }
 
-  & + .tc-button {
+  & + .tc-button,
+  & + .tc-link {
     margin-left: 6px;
   }
+}
+
+.tc-link {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 35px;
+  width: auto;
+  background: none;
+  color: @color;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: normal;
+  text-align: center;
+  border: none;
+  padding: 9px 0;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: underline;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  text-transform: none;
+  .truncate();
+
+  &:hover,
+  &:focus {
+    color: @colorActive;
+  }
+
+  // sizes
+  &.small {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &.large {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  
+  & + .tc-button,
+  & + .tc-link {
+    margin-left: 6px;
+  }
+}
+
+[columns] > .tc-button {
+  padding: 8px 9px;
+  margin: 0 @columnGutter;
+
+  &.small { padding: 6px 9px; }
+  &.large { padding: 7px 14px; }
+}
+
+[columns] > .tc-link {
+  padding: 9px 0;
+  margin: 0 @columnGutter;
 }
